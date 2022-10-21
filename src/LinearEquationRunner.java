@@ -16,8 +16,9 @@ public class LinearEquationRunner {
         int x2= Integer.parseInt(coordinate2.substring(1,coordinate2.indexOf(",")));
         int y2= Integer.parseInt(coordinate2.substring(coordinate2.indexOf(",") + 1,coordinate2.indexOf(")")));
         LinearEquation random= new LinearEquation(x1,y1,x2,y2);
-        String equation= random.equation();
-        System.out.println(equation);
+        if (x1==x2) {
+            System.out.println("These points are on a vertical line: x = " + x1);
+        }
 
 
 

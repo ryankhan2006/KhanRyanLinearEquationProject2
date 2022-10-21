@@ -1,3 +1,5 @@
+import static java.lang.Math.*;
+
 public class LinearEquation {
     private int x1;
     private int y1;
@@ -23,7 +25,7 @@ public class LinearEquation {
     }
 
     public double distance() {
-        double d = Math.pow((Math.pow(x2 - x1, 2)) + (Math.pow(y2 - y1, 2)), 0.5);
+        double d = pow((pow(x2 - x1, 2)) + (pow(y2 - y1, 2)), 0.5);
         double roundedD = roundedToHundredth(d);
         return roundedD;
     }
@@ -33,23 +35,5 @@ public class LinearEquation {
         double roundedYIINT = roundedToHundredth(yIntercept);
         return roundedYIINT;
     }
-
-    public String equation() {
-        int x = x2 - x1;
-        int y = y2 - y1;
-        if (x < 0) {
-            x = Math.abs(x);
-            y = -y;
-        }
-        String slope = y + "/" + x;
-
-        if (yIntercept() < 0) {
-            return "y= " + slope + "x " + "-" + Math.abs(yIntercept());
-        } else {
-            return "y= " + slope + "x " + Math.abs(yIntercept());
-        }
-
-    }
-
 
 }
